@@ -1,4 +1,6 @@
 import argparse
+import torch
+from warpctc_pytorch import CTCLoss
 from easydict import EasyDict as edict
 import yaml
 import os
@@ -62,8 +64,9 @@ def main():
 
     model = model.to(device)
 
-    # define loss function
-    criterion = torch.nn.CTCLoss()
+    # define loss function 换第三方loss
+    criterion = CTCLoss()
+    # criterion = torch.nn.CTCLoss()
 
     last_epoch = config.TRAIN.BEGIN_EPOCH
     optimizer = utils.get_optimizer(config, model)

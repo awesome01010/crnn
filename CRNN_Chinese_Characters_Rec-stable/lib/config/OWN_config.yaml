@@ -12,8 +12,8 @@ CUDNN:
 
 DATASET:
   DATASET: OWN
-  ROOT: "H:/DL-DATASET/360M/images"
-  JSON_FILE: {'train': 'lib/dataset/txt/train_own.txt', 'val': 'lib/dataset/txt/test_own.txt'}
+  ROOT: "/workspace/datasets/home/dataset/ReCTS/crop_train/image_rotate90"
+  JSON_FILE: {'train': '/workspace/datasets/home/dataset/ReCTS/crop_train/train.txt', 'val': '/workspace/datasets/home/dataset/ReCTS/crop_train/valid.txt'}
   SCALE_FACTOR: 0.25
   ROT_FACTOR: 30
   STD: 0.193
@@ -29,9 +29,9 @@ TRAIN:
     IS_RESUME: False
     FILE: ''
   OPTIMIZER: 'adam'
-  LR: 0.0001
+  LR: 0.001
   WD: 0.0
-  LR_STEP: [60, 80]
+  LR_STEP: [40, 60, 80]
   LR_FACTOR: 0.1
   MOMENTUM: 0.0
   NESTEROV: False
