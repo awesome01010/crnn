@@ -15,6 +15,7 @@ import utils
 import dataset
 
 import models.crnn as crnn
+import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--trainRoot', required=True, help='path to dataset')
